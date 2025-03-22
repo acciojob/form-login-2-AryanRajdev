@@ -1,18 +1,18 @@
-//your JS code here. If required.
 let myform = document.querySelector("#my-form");
 
-myform.addEventListener("click",(event)=>{
-	event.preventDefault();
-	
-	let firstName = document.querySelector("#Firsttext").value;
-	let lastName = document.querySelector("#Lasttext").value;
-	let phone = document.querySelector("#number").value;
-	let email  = document.querySelector("#email").value;
+myform.addEventListener("submit", (event) => {
+    event.preventDefault();  // Prevent page reload on form submission
 
-	alert(`First Name: ${firstName} Last Name: ${lastName} Phone Number: ${phone} Email ID: ${email}`);
+    let firstName = document.querySelector('input[name="FirstName"]').value;
+    let lastName = document.querySelector('input[name="LastName"]').value;
+    let phone = document.querySelector('input[name="PhoneNumber"]').value;
+    let email = document.querySelector('input[name="EmailID"]').value;
 
-	document.querySelector("#Firsttext").value = "";
-	document.querySelector("#Lasttext").value = "";
-	document.querySelector("#number").value = "";
-	document.querySelector("#email").value = "";
-})
+    alert(`First Name: ${firstName} Last Name: ${lastName} Phone Number: ${phone} Email ID: ${email}`);
+
+    // Clear input fields after submission
+    document.querySelector('input[name="FirstName"]').value = "";
+    document.querySelector('input[name="LastName"]').value = "";
+    document.querySelector('input[name="PhoneNumber"]').value = "";
+    document.querySelector('input[name="EmailID"]').value = "";
+});
